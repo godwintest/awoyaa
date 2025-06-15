@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Complete documentation for Awoyaa - POS system. Learn how to use all features including sales processing, inventory management, customer management, and reporting."
+    />
+    <meta
+      name="keywords"
+      content="Awoyaa documentation, POS system guide, inventory management, sales processing, customer management, reporting, user manual"
+    />
+    <title>Documentation - Awoyaa | Complete User Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/main.css" />
+    <style>
+      .documentation-nav {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 280px;
+        height: calc(100vh - 80px);
+        background: #f8fafc;
+        border-right: 1px solid #e2e8f0;
+        overflow-y: auto;
+        z-index: 100;
+        padding: 2rem 0;
+      }
+
+      .documentation-content {
+        margin-left: 280px;
+        padding: 2rem 3rem;
+        max-width: calc(100% - 280px);
+      }
+
+      .nav-section {
+        margin-bottom: 1.5rem;
+      }
+
+      .nav-section-title {
+        font-weight: 600;
+        color: #1e293b;
+        padding: 0.5rem 1.5rem;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        border-bottom: 1px solid #e2e8f0;
+        margin-bottom: 0.5rem;
+      }
+
+      .nav-link {
+        display: block;
+        padding: 0.5rem 1.5rem;
+        color: #64748b;
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: all 0.2s ease;
+        border-left: 3px solid transparent;
+      }
+
+      .nav-link:hover {
+        background: #e2e8f0;
+        color: #1e293b;
+      }
+
+      .nav-link.active {
+        background: #dbeafe;
+        color: #1d4ed8;
+        border-left-color: #1d4ed8;
+      }
+
+      .nav-sub-link {
+        padding-left: 2.5rem;
+        font-size: 0.8rem;
+      }
+
+      .doc-section {
+        margin-bottom: 3rem;
+        scroll-margin-top: 100px;
+      }
+
+      .doc-section h2 {
+        color: #1e293b;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #e2e8f0;
+      }
+
+      .doc-section h3 {
+        color: #334155;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 2rem 0 1rem 0;
+      }
+
+      .doc-section h4 {
+        color: #475569;
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 1.5rem 0 0.75rem 0;
+      }
+
+      .doc-section p {
+        color: #64748b;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+      }
+
+      .doc-section ul,
+      .doc-section ol {
+        color: #64748b;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+      }
+
+      .doc-section li {
+        margin-bottom: 0.5rem;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .feature-card {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 1.5rem;
+      }
+
+      .feature-card h4 {
+        color: #1e293b;
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+      }
+
+      .feature-card p {
+        margin-bottom: 0;
+        font-size: 0.875rem;
+      }
+
+      .step-list {
+        counter-reset: step-counter;
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .step-list li {
+        counter-increment: step-counter;
+        position: relative;
+        padding-left: 3rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .step-list li::before {
+        content: counter(step-counter);
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: #1d4ed8;
+        color: white;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 0.875rem;
+      }
+
+      .code-block {
+        background: #1e293b;
+        color: #e2e8f0;
+        padding: 1rem;
+        border-radius: 6px;
+        font-family: "Courier New", monospace;
+        font-size: 0.875rem;
+        overflow-x: auto;
+        margin: 1rem 0;
+      }
+
+      .alert {
+        padding: 1rem;
+        border-radius: 6px;
+        margin: 1rem 0;
+        border-left: 4px solid;
+      }
+
+      .alert-info {
+        background: #dbeafe;
+        border-color: #1d4ed8;
+        color: #1e40af;
+      }
+
+      .alert-warning {
+        background: #fef3c7;
+        border-color: #f59e0b;
+        color: #92400e;
+      }
+
+      .alert-success {
+        background: #d1fae5;
+        border-color: #10b981;
+        color: #047857;
+      }
+
+      .screenshot {
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .mobile-nav-toggle {
+        display: none;
+        position: fixed;
+        top: 90px;
+        left: 1rem;
+        z-index: 200;
+        background: #1d4ed8;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 0.5rem;
+        cursor: pointer;
+      }
+
+      @media (max-width: 768px) {
+        .documentation-nav {
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+
+        .documentation-nav.open {
+          transform: translateX(0);
+        }
+
+        .documentation-content {
+          margin-left: 0;
+          max-width: 100%;
+          padding: 1rem;
+        }
+
+        .mobile-nav-toggle {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header id="site-header" class="site-header">
+      <div class="container">
+        <div class="header-content">
+          <a href="/" class="logo">
+            <span class="logo-text">Awoyaa</span>
+          </a>
+          <nav class="main-nav">
+            <button
+              id="mobile-menu-toggle"
+              class="mobile-menu-toggle"
+              aria-label="Toggle Menu"
+            >
+              <span class="hamburger-icon"></span>
+            </button>
+            <ul id="main-menu" class="main-menu">
+              <li><a href="/">Home</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/features.html">Features</a></li>
+              <li><a href="/pricing.html">Pricing</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+              <li><a href="/faq.html">FAQ</a></li>
+              <li><a href="/blog.html">Blog</a></li>
+              <li>
+                <a href="/documentation.html" class="active">Documentation</a>
+              </li>
+            </ul>
+          </nav>
+          <a href="/#free-trial" class="btn btn-primary">Start Free Trial</a>
+        </div>
+      </div>
+    </header>
+
+    <button class="mobile-nav-toggle" id="mobile-nav-toggle">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <nav class="documentation-nav" id="documentation-nav">
+      <div class="nav-section">
+        <div class="nav-section-title">Getting Started</div>
+        <a href="#overview" class="nav-link">Overview</a>
+        <a href="#key-features" class="nav-link">Key Features</a>
+        <a href="#system-requirements" class="nav-link">System Requirements</a>
+        <a href="#installation" class="nav-link">Installation Process</a>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">POS Usage</div>
+        <a href="#processing-sales" class="nav-link">Processing Sales</a>
+        <a href="#customer-management" class="nav-link">Customer Management</a>
+        <a href="#loyalty-system" class="nav-link">Loyalty Points System</a>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Inventory Management</div>
+        <a href="#adding-products" class="nav-link">Adding Products</a>
+        <a href="#categories" class="nav-link">Categories</a>
+        <a href="#product-variations" class="nav-link">Product Variations</a>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">WooCommerce Integration</div>
+        <a href="#woo-setup" class="nav-link">Setting up Integration</a>
+        <a href="#sync-products" class="nav-link">Synchronizing Products</a>
+        <a href="#sync-orders" class="nav-link">Synchronizing Orders</a>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Printing Options</div>
+        <a href="#thermal-printer" class="nav-link">Thermal Printer Setup</a>
+        <a href="#browser-printing" class="nav-link">Browser-Based Printing</a>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Reports & Analytics</div>
+        <a href="#sales-reports" class="nav-link">Sales Reports</a>
+        <a href="#inventory-reports" class="nav-link">Inventory Reports</a>
+        <a href="#generating-reports" class="nav-link">Generating Reports</a>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">User Management</div>
+        <a href="#adding-users" class="nav-link">Adding New Users</a>
+        <a href="#user-roles" class="nav-link">User Roles & Permissions</a>
+        <a href="#editing-users" class="nav-link">Editing User Information</a>
+      </div>
+    </nav>
+
+    <main class="documentation-content">
+      <!-- Overview Section -->
+      <section id="overview" class="doc-section">
+        <h2>Awoyaa Documentation</h2>
+        <p>
+          Welcome to the comprehensive documentation for Awoyaa's system. This
+          guide will help you understand and utilize all the features of our
+          powerful point-of-sale solution designed for modern businesses.
+        </p>
+
+        <div class="alert alert-info">
+          <strong>New to Awoyaa?</strong> Start with our
+          <a href="#installation">Installation Guide</a> to get your system up
+          and running quickly.
+        </div>
+
+        <h3 id="key-features">Key Features</h3>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h4>Multi-Business Support</h4>
+            <p>
+              Manage multiple businesses from a single installation with
+              separate inventory, customers, and reporting for each business.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <h4>Advanced POS System</h4>
+            <p>
+              Touch-friendly interface with barcode scanning, multiple payment
+              methods, and real-time inventory updates.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <h4>Inventory Management</h4>
+            <p>
+              Complete product management with categories, variations, stock
+              tracking, and automated reorder alerts.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <h4>Customer Management</h4>
+            <p>
+              Comprehensive customer database with purchase history, loyalty
+              points, and targeted marketing capabilities.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <h4>WooCommerce Integration</h4>
+            <p>
+              Seamless synchronization with WooCommerce stores for unified
+              online and offline operations.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <h4>Advanced Reporting</h4>
+            <p>
+              Detailed sales, inventory, and customer reports with customizable
+              date ranges and export options.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Installation Guide -->
+      <section id="installation" class="doc-section">
+        <h2>Installation Guide</h2>
+
+        <h3 id="system-requirements">System Requirements</h3>
+        <p>
+          Before installing Awoyaa, ensure your system meets the following
+          requirements:
+        </p>
+
+        <h4>Server Requirements</h4>
+        <ul>
+          <li>
+            <strong>PHP:</strong> Version 7.4 or higher (PHP 8.0+ recommended)
+          </li>
+          <li>
+            <strong>MySQL:</strong> Version 5.7 or higher (MySQL 8.0+
+            recommended)
+          </li>
+          <li><strong>Web Server:</strong> Apache 2.4+ or Nginx 1.18+</li>
+          <li><strong>Memory:</strong> Minimum 512MB RAM (2GB+ recommended)</li>
+          <li><strong>Storage:</strong> At least 1GB free disk space</li>
+        </ul>
+
+        <h4>PHP Extensions Required</h4>
+        <ul>
+          <li>PDO PHP Extension</li>
+          <li>cURL PHP Extension</li>
+          <li>OpenSSL PHP Extension</li>
+          <li>Mbstring PHP Extension</li>
+          <li>Tokenizer PHP Extension</li>
+          <li>XML PHP Extension</li>
+          <li>GD Library</li>
+          <li>JSON PHP Extension</li>
+        </ul>
+
+        <h3 id="installation-process">Installation Process</h3>
+        <ol class="step-list">
+          <li>
+            <strong>Download the Installation Package</strong>
+            <p>
+              Download the latest version of Awoyaa from your account dashboard
+              or the provided download link.
+            </p>
+          </li>
+
+          <li>
+            <strong>Upload Files to Server</strong>
+            <p>
+              Extract the downloaded ZIP file and upload all contents to your
+              web server's document root directory (usually public_html or www).
+            </p>
+          </li>
+
+          <li>
+            <strong>Create Database</strong>
+            <p>
+              Create a new MySQL database for your POS system using your hosting
+              control panel or phpMyAdmin.
+            </p>
+          </li>
+
+          <li>
+            <strong>Set File Permissions</strong>
+            <p>Set the following directories to 755 permissions:</p>
+            <div class="code-block">
+              storage/ bootstrap/cache/ public/uploads/
+            </div>
+          </li>
+
+          <li>
+            <strong>Run Installation Wizard</strong>
+            <p>
+              Navigate to your domain in a web browser. The installation wizard
+              will automatically start and guide you through the setup process.
+            </p>
+          </li>
+
+          <li>
+            <strong>Configure Database Connection</strong>
+            <p>
+              Enter your database credentials when prompted by the installation
+              wizard.
+            </p>
+          </li>
+
+          <li>
+            <strong>Create Admin Account</strong>
+            <p>
+              Set up your administrator account with username, email, and
+              password.
+            </p>
+          </li>
+
+          <li>
+            <strong>Complete Installation</strong>
+            <p>
+              Follow the remaining steps in the wizard to complete the
+              installation process.
+            </p>
+          </li>
+        </ol>
+
+        <div class="alert alert-success">
+          <strong>Installation Complete!</strong> You can now log in to your
+          Awoyaa POS system using the admin credentials you created.
+        </div>
+      </section>
+
+      <!-- POS Usage -->
+      <section id="pos-usage" class="doc-section">
+        <h2>POS Usage</h2>
+
+        <h3 id="processing-sales">Processing Sales</h3>
+        <p>
+          The POS interface is designed for quick and efficient sales
+          processing. Here's how to process a sale:
+        </p>
+
+        <h4>Steps to Process a Sale:</h4>
+        <ol class="step-list">
+          <li>
+            <strong>Access POS Interface</strong>
+            <p>
+              Click on "POS" from the main dashboard to open the point-of-sale
+              interface.
+            </p>
+          </li>
+
+          <li>
+            <strong>Add Products to Cart</strong>
+            <p>
+              Search for products using the search bar or browse categories.
+              Click on products to add them to the cart.
+            </p>
+          </li>
+
+          <li>
+            <strong>Adjust Quantities</strong>
+            <p>
+              Use the quantity controls to adjust the number of items for each
+              product in the cart.
+            </p>
+          </li>
+
+          <li>
+            <strong>Apply Discounts (Optional)</strong>
+            <p>
+              Apply percentage or fixed amount discounts to individual items or
+              the entire sale.
+            </p>
+          </li>
+
+          <li>
+            <strong>Select Customer (Optional)</strong>
+            <p>
+              Choose an existing customer or add a new customer to the sale for
+              loyalty points and purchase history.
+            </p>
+          </li>
+
+          <li>
+            <strong>Choose Payment Method</strong>
+            <p>
+              Select from available payment methods: Cash, Card, Bank Transfer,
+              or multiple payment methods for split payments.
+            </p>
+          </li>
+
+          <li>
+            <strong>Complete Sale</strong>
+            <p>
+              Click "Complete Sale" to finalize the transaction and print the
+              receipt.
+            </p>
+          </li>
+        </ol>
+
+        <h3 id="customer-management">Customer Management</h3>
+        <p>
+          Effective customer management helps build relationships and increase
+          sales through personalized service.
+        </p>
+
+        <h4>Adding a New Customer</h4>
+        <ol>
+          <li>Navigate to "Customers" from the main menu</li>
+          <li>Click "Add New Customer"</li>
+          <li>
+            Fill in customer details:
+            <ul>
+              <li>Name (required)</li>
+              <li>Email address</li>
+              <li>Phone number</li>
+              <li>Address information</li>
+              <li>Date of birth (for birthday promotions)</li>
+            </ul>
+          </li>
+          <li>Set customer group (Regular, VIP, Wholesale, etc.)</li>
+          <li>Save the customer information</li>
+        </ol>
+
+        <h4>Searching for Customers</h4>
+        <p>
+          Use the customer search feature in the POS to quickly find customers
+          by:
+        </p>
+        <ul>
+          <li>Name</li>
+          <li>Phone number</li>
+          <li>Email address</li>
+          <li>Customer ID</li>
+        </ul>
+
+        <h4>Viewing Customer History</h4>
+        <p>Access complete purchase history for any customer, including:</p>
+        <ul>
+          <li>Previous purchases</li>
+          <li>Total amount spent</li>
+          <li>Loyalty points balance</li>
+          <li>Preferred products</li>
+          <li>Last visit date</li>
+        </ul>
+
+        <h3 id="loyalty-system">Loyalty Points System</h3>
+        <p>
+          The built-in loyalty system helps retain customers and encourage
+          repeat purchases.
+        </p>
+
+        <h4>How Loyalty Points Work</h4>
+        <ul>
+          <li>Customers earn points based on their purchases</li>
+          <li>Points can be redeemed for discounts on future purchases</li>
+          <li>
+            Different customer groups can have different point earning rates
+          </li>
+          <li>Points can expire after a set period (configurable)</li>
+        </ul>
+
+        <h4>Configuring Loyalty Settings</h4>
+        <ol>
+          <li>Go to Settings → Loyalty Settings</li>
+          <li>Set points earning rate (e.g., 1 point per $1 spent)</li>
+          <li>Set redemption rate (e.g., 100 points = $1 discount)</li>
+          <li>Configure point expiration rules</li>
+          <li>Set minimum purchase amount for earning points</li>
+        </ol>
+      </section>
+
+      <!-- Inventory Management -->
+      <section id="inventory-management" class="doc-section">
+        <h2>Inventory Management</h2>
+
+        <h3 id="adding-products">Adding Products</h3>
+        <p>
+          Proper product setup is crucial for efficient inventory management and
+          sales processing.
+        </p>
+
+        <h4>Basic Product Information</h4>
+        <ol class="step-list">
+          <li>
+            <strong>Navigate to Products</strong>
+            <p>
+              Go to "Products" from the main menu and click "Add New Product".
+            </p>
+          </li>
+
+          <li>
+            <strong>Enter Product Details</strong>
+            <p>Fill in the required information:</p>
+            <ul>
+              <li><strong>Product Name:</strong> Clear, descriptive name</li>
+              <li>
+                <strong>SKU:</strong> Unique product identifier (auto-generated
+                if left blank)
+              </li>
+              <li><strong>Barcode:</strong> Product barcode for scanning</li>
+              <li>
+                <strong>Category:</strong> Product category for organization
+              </li>
+              <li>
+                <strong>Description:</strong> Detailed product description
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Set Pricing</strong>
+            <p>Configure product pricing:</p>
+            <ul>
+              <li><strong>Cost Price:</strong> Your cost for the product</li>
+              <li><strong>Selling Price:</strong> Regular retail price</li>
+              <li><strong>Tax Rate:</strong> Applicable tax percentage</li>
+              <li><strong>Discount:</strong> Any permanent discounts</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Inventory Settings</strong>
+            <p>Configure stock management:</p>
+            <ul>
+              <li>
+                <strong>Track Quantity:</strong> Enable/disable stock tracking
+              </li>
+              <li><strong>Current Stock:</strong> Initial stock quantity</li>
+              <li>
+                <strong>Alert Quantity:</strong> Low stock alert threshold
+              </li>
+              <li>
+                <strong>Unit:</strong> Unit of measurement (pieces, kg, liters,
+                etc.)
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Upload Product Image</strong>
+            <p>
+              Add a product image for easy identification in the POS interface.
+            </p>
+          </li>
+
+          <li>
+            <strong>Save Product</strong>
+            <p>Click "Save Product" to add the item to your inventory.</p>
+          </li>
+        </ol>
+
+        <h3 id="categories">Categories</h3>
+        <p>
+          Organize your products into categories for better management and
+          easier navigation in the POS.
+        </p>
+
+        <h4>Creating a New Category</h4>
+        <ol>
+          <li>Go to "Products" → "Categories"</li>
+          <li>Click "Add New Category"</li>
+          <li>Enter category name and description</li>
+          <li>Upload category image (optional)</li>
+          <li>Set parent category if creating a subcategory</li>
+          <li>Save the category</li>
+        </ol>
+
+        <h4>Managing Categories</h4>
+        <ul>
+          <li>
+            <strong>Edit Categories:</strong> Update category information
+            anytime
+          </li>
+          <li>
+            <strong>Delete Categories:</strong> Remove unused categories
+            (products will be moved to "Uncategorized")
+          </li>
+          <li>
+            <strong>Reorder Categories:</strong> Drag and drop to change
+            category order
+          </li>
+          <li>
+            <strong>Subcategories:</strong> Create hierarchical category
+            structures
+          </li>
+        </ul>
+
+        <h3 id="product-variations">Product Variations</h3>
+        <p>
+          Handle products with multiple options like size, color, or style using
+          product variations.
+        </p>
+
+        <h4>Adding Product Variations</h4>
+        <ol class="step-list">
+          <li>
+            <strong>Enable Variations</strong>
+            <p>
+              When creating or editing a product, check "This product has
+              variations".
+            </p>
+          </li>
+
+          <li>
+            <strong>Define Variation Attributes</strong>
+            <p>Add attributes like Size, Color, Material, etc.</p>
+          </li>
+
+          <li>
+            <strong>Create Variation Combinations</strong>
+            <p>
+              Generate all possible combinations or create specific variations
+              manually.
+            </p>
+          </li>
+
+          <li>
+            <strong>Set Variation Details</strong>
+            <p>For each variation, set:</p>
+            <ul>
+              <li>SKU (unique for each variation)</li>
+              <li>Price (can differ from base product)</li>
+              <li>Stock quantity</li>
+              <li>Barcode (if different)</li>
+              <li>Image (variation-specific image)</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Save Variations</strong>
+            <p>Save all variations to make them available in the POS.</p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- WooCommerce Integration -->
+      <section id="woocommerce-integration" class="doc-section">
+        <h2>WooCommerce Integration</h2>
+        <p>
+          Seamlessly connect your physical store with your online WooCommerce
+          store for unified inventory and order management.
+        </p>
+
+        <h3 id="woo-setup">Setting up WooCommerce Integration</h3>
+        <ol class="step-list">
+          <li>
+            <strong>Install WooCommerce Plugin</strong>
+            <p>
+              Ensure WooCommerce is installed and activated on your WordPress
+              site.
+            </p>
+          </li>
+
+          <li>
+            <strong>Generate API Keys</strong>
+            <p>In your WordPress admin:</p>
+            <ul>
+              <li>Go to WooCommerce → Settings → Advanced → REST API</li>
+              <li>Click "Add Key"</li>
+              <li>Set permissions to "Read/Write"</li>
+              <li>Generate and copy the Consumer Key and Consumer Secret</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Configure Integration in Awoyaa</strong>
+            <p>In your POS system:</p>
+            <ul>
+              <li>Go to Settings → WooCommerce Integration</li>
+              <li>Enter your WooCommerce store URL</li>
+              <li>Paste the Consumer Key and Consumer Secret</li>
+              <li>Test the connection</li>
+              <li>Save settings</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Configure Sync Settings</strong>
+            <p>Set up synchronization preferences:</p>
+            <ul>
+              <li>Auto-sync frequency</li>
+              <li>
+                Product sync direction (POS to WooCommerce or bidirectional)
+              </li>
+              <li>Stock sync settings</li>
+              <li>Order sync preferences</li>
+            </ul>
+          </li>
+        </ol>
+
+        <h3 id="sync-products">Synchronizing Products</h3>
+        <p>
+          Keep your product catalog synchronized between your POS and
+          WooCommerce store.
+        </p>
+
+        <h4>Manual Product Sync</h4>
+        <ol>
+          <li>Go to Products → WooCommerce Sync</li>
+          <li>Select products to sync</li>
+          <li>
+            Choose sync direction (POS to WooCommerce or WooCommerce to POS)
+          </li>
+          <li>Click "Sync Selected Products"</li>
+          <li>Monitor sync progress and review any errors</li>
+        </ol>
+
+        <h4>Automatic Product Sync</h4>
+        <ul>
+          <li>Enable automatic sync in WooCommerce settings</li>
+          <li>Set sync frequency (every hour, daily, etc.)</li>
+          <li>Configure which product fields to sync</li>
+          <li>Set up conflict resolution rules</li>
+        </ul>
+
+        <h3 id="sync-orders">Synchronizing Orders</h3>
+        <p>
+          Import WooCommerce orders into your POS system for unified order
+          management.
+        </p>
+
+        <h4>Order Sync Process</h4>
+        <ol>
+          <li>
+            WooCommerce orders are automatically imported based on sync settings
+          </li>
+          <li>Orders appear in the POS with "Online" status</li>
+          <li>Inventory is automatically adjusted for online orders</li>
+          <li>Order fulfillment can be managed from the POS</li>
+        </ol>
+
+        <div class="alert alert-info">
+          <strong>Note:</strong> Order synchronization is one-way from
+          WooCommerce to POS. POS sales are not sent back to WooCommerce.
+        </div>
+      </section>
+
+      <!-- Printing Options -->
+      <section id="printing-options" class="doc-section">
+        <h2>Printing Options</h2>
+        <p>
+          Awoyaa supports multiple printing methods to suit different business
+          needs and hardware setups.
+        </p>
+
+        <h3 id="thermal-printer">Thermal Printer Setup</h3>
+        <p>
+          Thermal printers provide fast, reliable receipt printing for
+          high-volume businesses.
+        </p>
+
+        <h4>Supported Thermal Printers</h4>
+        <ul>
+          <li>ESC/POS compatible thermal printers</li>
+          <li>USB connected thermal printers</li>
+          <li>Network (Ethernet/WiFi) thermal printers</li>
+          <li>Bluetooth thermal printers</li>
+        </ul>
+
+        <h4>Thermal Printer Configuration</h4>
+        <ol class="step-list">
+          <li>
+            <strong>Install Printer Drivers</strong>
+            <p>
+              Install the appropriate drivers for your thermal printer on the
+              POS computer.
+            </p>
+          </li>
+
+          <li>
+            <strong>Configure Printer in POS</strong>
+            <p>Go to Settings → Printing Settings:</p>
+            <ul>
+              <li>Select "Thermal Printer" as print method</li>
+              <li>Choose your printer from the list</li>
+              <li>Set paper width (58mm or 80mm)</li>
+              <li>Configure print density and speed</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Customize Receipt Template</strong>
+            <p>Design your receipt layout:</p>
+            <ul>
+              <li>Add business logo and information</li>
+              <li>Configure header and footer text</li>
+              <li>Set font sizes and styles</li>
+              <li>Include/exclude specific fields</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Test Printing</strong>
+            <p>
+              Print a test receipt to verify configuration and make adjustments
+              as needed.
+            </p>
+          </li>
+        </ol>
+
+        <h3 id="browser-printing">Browser-Based Printing</h3>
+        <p>
+          Use standard printers through the browser's print function for
+          businesses without thermal printers.
+        </p>
+
+        <h4>Setting up Browser Printing</h4>
+        <ol>
+          <li>Go to Settings → Printing Settings</li>
+          <li>Select "Browser Printing" as print method</li>
+          <li>Choose receipt size (A4, Letter, or Custom)</li>
+          <li>Configure print margins and layout</li>
+          <li>Save settings</li>
+        </ol>
+
+        <h4>Browser Printing Features</h4>
+        <ul>
+          <li>Works with any printer connected to the computer</li>
+          <li>Supports color printing for logos and graphics</li>
+          <li>Customizable receipt templates</li>
+          <li>Print preview before printing</li>
+          <li>Save receipts as PDF</li>
+        </ul>
+
+        <div class="alert alert-warning">
+          <strong>Note:</strong> Browser printing may require user interaction
+          for each print job, making it less suitable for high-volume
+          operations.
+        </div>
+      </section>
+
+      <!-- Reports & Analytics -->
+      <section id="reports-analytics" class="doc-section">
+        <h2>Reports & Analytics</h2>
+        <p>
+          Comprehensive reporting tools help you understand your business
+          performance and make informed decisions.
+        </p>
+
+        <h3 id="sales-reports">Sales Reports</h3>
+        <p>
+          Track sales performance across different time periods and analyze
+          trends.
+        </p>
+
+        <h4>Available Sales Reports</h4>
+        <ul>
+          <li>
+            <strong>Daily Sales Summary:</strong> Overview of daily sales
+            performance
+          </li>
+          <li>
+            <strong>Sales by Product:</strong> Best-selling products and revenue
+            breakdown
+          </li>
+          <li>
+            <strong>Sales by Category:</strong> Performance analysis by product
+            category
+          </li>
+          <li>
+            <strong>Sales by Customer:</strong> Customer purchase patterns and
+            loyalty
+          </li>
+          <li>
+            <strong>Payment Method Report:</strong> Analysis of payment
+            preferences
+          </li>
+          <li>
+            <strong>Hourly Sales Report:</strong> Peak hours and sales
+            distribution
+          </li>
+          <li>
+            <strong>Cashier Performance:</strong> Individual staff sales
+            performance
+          </li>
+        </ul>
+
+        <h4>Customizing Sales Reports</h4>
+        <ul>
+          <li>Select custom date ranges</li>
+          <li>Filter by specific products, categories, or customers</li>
+          <li>Group data by day, week, month, or year</li>
+          <li>Include or exclude specific payment methods</li>
+          <li>Filter by business location (for multi-location setups)</li>
+        </ul>
+
+        <h3 id="inventory-reports">Inventory Reports</h3>
+        <p>
+          Monitor stock levels, track inventory movement, and identify
+          optimization opportunities.
+        </p>
+
+        <h4>Available Inventory Reports</h4>
+        <ul>
+          <li>
+            <strong>Current Stock Report:</strong> Real-time inventory levels
+          </li>
+          <li>
+            <strong>Low Stock Alert:</strong> Products below reorder threshold
+          </li>
+          <li>
+            <strong>Stock Movement:</strong> Detailed inventory transaction
+            history
+          </li>
+          <li>
+            <strong>Product Performance:</strong> Fast and slow-moving products
+          </li>
+          <li>
+            <strong>Inventory Valuation:</strong> Total inventory value at cost
+            and retail
+          </li>
+          <li>
+            <strong>Expiry Report:</strong> Products approaching expiration
+            dates
+          </li>
+          <li>
+            <strong>Dead Stock Report:</strong> Products with no recent sales
+          </li>
+        </ul>
+
+        <h3 id="generating-reports">Generating Reports</h3>
+        <ol class="step-list">
+          <li>
+            <strong>Access Reports Section</strong>
+            <p>Navigate to "Reports" from the main dashboard menu.</p>
+          </li>
+
+          <li>
+            <strong>Select Report Type</strong>
+            <p>
+              Choose from Sales Reports, Inventory Reports, or Customer Reports.
+            </p>
+          </li>
+
+          <li>
+            <strong>Set Parameters</strong>
+            <p>Configure report parameters:</p>
+            <ul>
+              <li>
+                Date range (today, yesterday, this week, this month, custom
+                range)
+              </li>
+              <li>Business location (if applicable)</li>
+              <li>Product categories or specific products</li>
+              <li>Customer groups or specific customers</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Generate Report</strong>
+            <p>
+              Click "Generate Report" to create the report with your specified
+              parameters.
+            </p>
+          </li>
+
+          <li>
+            <strong>Export or Print</strong>
+            <p>Export reports in various formats:</p>
+            <ul>
+              <li>PDF for professional presentation</li>
+              <li>Excel for further analysis</li>
+              <li>CSV for data import into other systems</li>
+              <li>Print directly from the browser</li>
+            </ul>
+          </li>
+        </ol>
+
+        <div class="alert alert-success">
+          <strong>Pro Tip:</strong> Schedule automatic report generation and
+          email delivery for regular business reviews.
+        </div>
+      </section>
+
+      <!-- User Management -->
+      <section id="user-management" class="doc-section">
+        <h2>User Management</h2>
+        <p>
+          Manage staff access and permissions to ensure security and proper
+          workflow in your business.
+        </p>
+
+        <h3 id="adding-users">Adding New Users</h3>
+        <ol class="step-list">
+          <li>
+            <strong>Navigate to User Management</strong>
+            <p>Go to Settings → Users from the main menu.</p>
+          </li>
+
+          <li>
+            <strong>Click Add New User</strong>
+            <p>
+              Click the "Add New User" button to open the user creation form.
+            </p>
+          </li>
+
+          <li>
+            <strong>Enter User Information</strong>
+            <p>Fill in the required user details:</p>
+            <ul>
+              <li><strong>Full Name:</strong> Employee's complete name</li>
+              <li><strong>Username:</strong> Unique login username</li>
+              <li><strong>Email:</strong> Valid email address</li>
+              <li>
+                <strong>Password:</strong> Secure password (minimum 8
+                characters)
+              </li>
+              <li><strong>Phone Number:</strong> Contact number</li>
+              <li><strong>Address:</strong> Employee address (optional)</li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Assign User Role</strong>
+            <p>Select appropriate role based on job responsibilities:</p>
+            <ul>
+              <li><strong>Admin:</strong> Full system access</li>
+              <li>
+                <strong>Manager:</strong> Management functions with limited
+                settings access
+              </li>
+              <li><strong>Cashier:</strong> POS access only</li>
+              <li>
+                <strong>Custom Role:</strong> Specific permissions as defined
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Set Business Access</strong>
+            <p>
+              For multi-business setups, specify which businesses the user can
+              access.
+            </p>
+          </li>
+
+          <li>
+            <strong>Save User</strong>
+            <p>
+              Click "Save User" to create the account and send login credentials
+              to the user.
+            </p>
+          </li>
+        </ol>
+
+        <h3 id="user-roles">User Roles and Permissions</h3>
+        <p>
+          Different user roles provide appropriate access levels for various job
+          functions.
+        </p>
+
+        <h4>Default User Roles</h4>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h4>Administrator</h4>
+            <ul>
+              <li>Full system access</li>
+              <li>User management</li>
+              <li>System settings</li>
+              <li>All reports and analytics</li>
+              <li>Business configuration</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <h4>Manager</h4>
+            <ul>
+              <li>POS operations</li>
+              <li>Inventory management</li>
+              <li>Customer management</li>
+              <li>Sales reports</li>
+              <li>Limited settings access</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <h4>Cashier</h4>
+            <ul>
+              <li>POS operations only</li>
+              <li>Process sales</li>
+              <li>View customer information</li>
+              <li>Print receipts</li>
+              <li>Basic product lookup</li>
+            </ul>
+          </div>
+        </div>
+
+        <h4>Creating Custom Roles</h4>
+        <ol>
+          <li>Go to Settings → User Roles</li>
+          <li>Click "Add New Role"</li>
+          <li>Enter role name and description</li>
+          <li>
+            Select specific permissions:
+            <ul>
+              <li>POS access</li>
+              <li>Product management</li>
+              <li>Customer management</li>
+              <li>Inventory management</li>
+              <li>Reports access</li>
+              <li>Settings access</li>
+              <li>User management</li>
+            </ul>
+          </li>
+          <li>Save the custom role</li>
+        </ol>
+
+        <h3 id="editing-users">Editing User Information</h3>
+        <p>
+          Update user details, change permissions, or deactivate accounts as
+          needed.
+        </p>
+
+        <h4>Modifying User Details</h4>
+        <ol>
+          <li>Go to Settings → Users</li>
+          <li>Find the user in the list</li>
+          <li>Click "Edit" next to the user's name</li>
+          <li>Update the necessary information</li>
+          <li>Save changes</li>
+        </ol>
+
+        <h4>Changing User Passwords</h4>
+        <ol>
+          <li>Edit the user account</li>
+          <li>Click "Change Password"</li>
+          <li>Enter new password (or generate random password)</li>
+          <li>Optionally send new password to user via email</li>
+          <li>Save changes</li>
+        </ol>
+
+        <h4>Deactivating Users</h4>
+        <ul>
+          <li>Edit the user account</li>
+          <li>Change status to "Inactive"</li>
+          <li>User will no longer be able to log in</li>
+          <li>All user data and sales history is preserved</li>
+          <li>Can be reactivated at any time</li>
+        </ul>
+
+        <div class="alert alert-warning">
+          <strong>Security Note:</strong> Regularly review user permissions and
+          deactivate accounts for employees who no longer work at your business.
+        </div>
+      </section>
+
+      <!-- Support Section -->
+      <section id="support" class="doc-section">
+        <h2>Getting Support</h2>
+        <p>
+          If you need additional help or have questions not covered in this
+          documentation, we're here to assist you.
+        </p>
+
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h4>📧 Email Support</h4>
+            <p>
+              Send detailed questions to our support team at
+              <strong>support@awoyaa.com</strong>. We typically respond within
+              24 hours.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <h4>💬 Live Chat</h4>
+            <p>
+              Use the live chat feature in your dashboard for immediate
+              assistance during business hours.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <h4>📚 Knowledge Base</h4>
+            <p>
+              Browse our comprehensive knowledge base for answers to common
+              questions and troubleshooting guides.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <h4>🎥 Video Tutorials</h4>
+            <p>
+              Watch step-by-step video tutorials for visual learners who prefer
+              guided demonstrations.
+            </p>
+          </div>
+        </div>
+
+        <div class="alert alert-info">
+          <strong>Before Contacting Support:</strong> Please check this
+          documentation and our FAQ section first. Include your system version
+          and detailed description of any issues when contacting support.
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>Company</h3>
+            <ul class="footer-links">
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/careers.html">Careers</a></li>
+              <li><a href="#">Solutions</a></li>
+              <li><a href="/blog.html">Blog</a></li>
+              <li><a href="#">Press</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Product</h3>
+            <ul class="footer-links">
+              <li><a href="/features.html">Features</a></li>
+              <li><a href="/pricing.html">Pricing</a></li>
+              <li><a href="/documentation.html">Documentation</a></li>
+              <!-- <li><a href="#">API</a></li> -->
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Support</h3>
+            <ul class="footer-links">
+              <li><a href="/contact.html">Contact</a></li>
+              <li><a href="/faq.html">FAQ</a></li>
+              <li><a href="#">Help Center</a></li>
+              <!-- <li><a href="#">Status</a></li> -->
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Legal</h3>
+            <ul class="footer-links">
+              <li><a href="/terms.html">Terms of Service</a></li>
+              <li><a href="/privacy.html">Privacy Policy</a></li>
+              <!-- <li><a href="#">Security</a></li> -->
+            </ul>
+          </div>
+
+          <div class="footer-column footer-newsletter">
+            <h3>Stay Updated</h3>
+            <p>Get the latest updates and news</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+            <div class="social-links">
+              <a href="#" aria-label="LinkedIn">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-linkedin"
+                >
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                  ></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-twitter"
+                >
+                  <path
+                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                  ></path>
+                </svg>
+              </a>
+              <a href="#" aria-label="Facebook">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-facebook"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 Awoyaa. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/js/main.js"></script>
+    <script>
+      // Documentation page specific JavaScript
+      document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll(".nav-link");
+        const sections = document.querySelectorAll(".doc-section");
+        const mobileNavToggle = document.getElementById("mobile-nav-toggle");
+        const documentationNav = document.getElementById("documentation-nav");
+
+        // Mobile navigation toggle
+        if (mobileNavToggle && documentationNav) {
+          mobileNavToggle.addEventListener("click", function () {
+            documentationNav.classList.toggle("open");
+          });
+        }
+
+        // Smooth scrolling for navigation links
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+              // Close mobile nav if open
+              if (
+                documentationNav &&
+                documentationNav.classList.contains("open")
+              ) {
+                documentationNav.classList.remove("open");
+              }
+
+              // Scroll to section
+              window.scrollTo({
+                top: targetSection.offsetTop - 100,
+                behavior: "smooth",
+              });
+
+              // Update active link
+              navLinks.forEach((l) => l.classList.remove("active"));
+              this.classList.add("active");
+            }
+          });
+        });
+
+        // Update active navigation link on scroll
+        function updateActiveLink() {
+          let current = "";
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop - 150;
+            const sectionHeight = section.offsetHeight;
+            if (
+              window.pageYOffset >= sectionTop &&
+              window.pageYOffset < sectionTop + sectionHeight
+            ) {
+              current = section.getAttribute("id");
+            }
+          });
+
+          navLinks.forEach((link) => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === "#" + current) {
+              link.classList.add("active");
+            }
+          });
+        }
+
+        // Throttled scroll event listener
+        let ticking = false;
+        window.addEventListener("scroll", function () {
+          if (!ticking) {
+            requestAnimationFrame(function () {
+              updateActiveLink();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        });
+
+        // Initialize active link
+        updateActiveLink();
+
+        // Close mobile nav when clicking outside
+        document.addEventListener("click", function (e) {
+          if (
+            documentationNav &&
+            documentationNav.classList.contains("open") &&
+            !documentationNav.contains(e.target) &&
+            !mobileNavToggle.contains(e.target)
+          ) {
+            documentationNav.classList.remove("open");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

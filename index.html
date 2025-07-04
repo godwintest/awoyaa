@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
@@ -15,33 +15,15 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/main.css" />
-    <!-- GitHub Pages SPA redirect script -->
-    <script>
-      (function (l) {
-        if (l.search[1] === "/") {
-          var decoded = l.search
-            .slice(1)
-            .split("&")
-            .map(function (s) {
-              return s.replace(/~and~/g, "&");
-            })
-            .join("?");
-          window.history.replaceState(
-            null,
-            null,
-            l.pathname.slice(0, -1) + decoded + l.hash
-          );
-        }
-      })(window.location);
-    </script>
+    <link rel="stylesheet" href="css/main.css" />
+
   </head>
   <body>
     <header id="site-header" class="site-header">
       <div class="container">
         <div class="header-content">
-          <a href="awoyaa-logo.png" class="logo">
-            <!-- <span class="logo-text">Awoyaa</span> -->
+          <a href="index.html" class="logo">
+            <img class="logo-main" src="awoyaa-logo.png" alt="Awoyaa Logo" />
           </a>
           <nav class="main-nav">
             <button
@@ -52,13 +34,13 @@
               <span class="hamburger-icon"></span>
             </button>
             <ul id="main-menu" class="main-menu">
-              <li><a href="/" class="active">Home</a></li>
-              <li><a href="/about.html">About</a></li>
-              <li><a href="/features.html">Features</a></li>
-              <li><a href="/pricing.html">Pricing</a></li>
-              <li><a href="/contact.html">Contact</a></li>
-              <li><a href="/faq.html">FAQ</a></li>
-              <li><a href="/blog.html">Blog</a></li>
+              <li><a href="index.html" class="active">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="features.html">Features</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="blog.html">Blog</a></li>
             </ul>
           </nav>
           <a href="#free-trial" class="btn btn-primary">Start Free Trial</a>
@@ -84,8 +66,9 @@
             </div>
           </div>
           <div class="hero-image">
+            <!-- src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" -->
             <img
-              src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              src="Awoyaa_Featured.PNG"
               alt="Dashboard mockup"
               class="dashboard-mockup"
             />
@@ -251,7 +234,7 @@
           </div>
 
           <div class="text-center mt-lg">
-            <a href="/features.html" class="btn btn-outline"
+            <a href="features.html" class="btn btn-outline"
               >View All Features</a
             >
           </div>
@@ -570,10 +553,10 @@
           <div class="footer-column">
             <h3>Company</h3>
             <ul class="footer-links">
-              <li><a href="/about.html">About</a></li>
-              <li><a href="/careers.html">Careers</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="careers.html">Careers</a></li>
               <li><a href="#">Solutions</a></li>
-              <li><a href="/blog.html">Blog</a></li>
+              <li><a href="blog.html">Blog</a></li>
               <li><a href="#">Press</a></li>
             </ul>
           </div>
@@ -581,9 +564,9 @@
           <div class="footer-column">
             <h3>Product</h3>
             <ul class="footer-links">
-              <li><a href="/features.html">Features</a></li>
-              <li><a href="/pricing.html">Pricing</a></li>
-              <li><a href="/documentation.html">Documentation</a></li>
+              <li><a href="features.html">Features</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="documentation.html">Documentation</a></li>
               <!-- <li><a href="#">API</a></li> -->
             </ul>
           </div>
@@ -591,8 +574,8 @@
           <div class="footer-column">
             <h3>Support</h3>
             <ul class="footer-links">
-              <li><a href="/contact.html">Contact</a></li>
-              <li><a href="/faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="faq.html">FAQ</a></li>
               <li><a href="#">Help Center</a></li>
               <!-- <li><a href="#">Status</a></li> -->
             </ul>
@@ -601,8 +584,8 @@
           <div class="footer-column">
             <h3>Legal</h3>
             <ul class="footer-links">
-              <li><a href="/terms.html">Terms of Service</a></li>
-              <li><a href="/privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Service</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
               <!-- <li><a href="#">Security</a></li> -->
             </ul>
           </div>

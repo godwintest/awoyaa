@@ -284,7 +284,7 @@ p {
 }
 
 .logo-main {
-  height: 70px;
+  height: 50px;
   width: auto;
   padding: 0;
   margin: 0;
@@ -1449,19 +1449,19 @@ p {
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-xl);
-  transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+  /* transform: perspective(1000px) rotateY(-5deg) rotateX(5deg); */
   transition: transform var(--transition-normal);
 }
 
-.hero-image:hover {
+/* .hero-image:hover {
   transform: perspective(1000px) rotateY(0) rotateX(0);
-}
+} */
 
 .dashboard-mockup {
   width: 100%;
   height: auto;
   display: block;
-  transition: transform var(--transition-normal);
+  /* transition: transform var(--transition-normal); */
 }
 
 /* Stats Section */

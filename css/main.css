@@ -262,7 +262,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: var(--spacing-10);
+  gap: var(--spacing-20);
   padding: var(--spacing-4) 0;
   min-height: 72px;
 }

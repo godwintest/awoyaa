@@ -261,7 +261,8 @@ p {
 .header-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: var(--spacing-10);
   padding: var(--spacing-4) 0;
   min-height: 72px;
 }
@@ -314,6 +315,10 @@ p {
 .main-menu li a:hover,
 .main-menu li a.active {
   color: var(--color-primary);
+}
+
+.header-content > .btn {
+  margin-left: auto;
 }
 
 .main-menu li a.active::after {

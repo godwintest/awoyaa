@@ -261,10 +261,25 @@ p {
 .header-content {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: var(--spacing-20);
+  justify-content: space-between; /* Mobile-first: space between logo and hamburger */
   padding: var(--spacing-4) 0;
   min-height: 72px;
+}
+
+.header-content .btn {
+  display: none; /* Hide 'Start Free Trial' button on mobile */
+}
+
+@media (min-width: 768px) {
+  .header-content {
+    justify-content: flex-start;
+    gap: var(--spacing-20);
+  }
+
+  .header-content .btn {
+    display: inline-flex; /* Show button on desktop */
+    margin-left: auto; /* Push button to the right */
+  }
 }
 
 .logo {

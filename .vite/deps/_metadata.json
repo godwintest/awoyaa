@@ -1,0 +1,15 @@
+{
+  "hash": "fd029e89",
+  "configHash": "e1b41606",
+  "lockfileHash": "2176cd49",
+  "browserHash": "03cfed28",
+  "optimized": {
+    "aos": {
+      "src": "../../node_modules/aos/dist/aos.js",
+      "file": "aos.js",
+      "fileHash": "02250924",
+      "needsInterop": true
+    }
+  },
+  "chunks": {}
+}

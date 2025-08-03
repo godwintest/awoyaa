@@ -1,6 +1,4 @@
 // Main JavaScript file for Awoyaa website
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 // Wait for DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", function () {

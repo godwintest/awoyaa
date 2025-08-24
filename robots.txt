@@ -1,0 +1,9 @@
+# Allow all crawlers full access
+User-agent: *
+Disallow:
+
+# Disallow crawling of development folders
+Disallow: /.vite/
+
+# Sitemap location
+Sitemap: https://www.awoyaa.com/sitemap.xml

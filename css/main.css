@@ -1471,6 +1471,8 @@ p {
   box-shadow: var(--shadow-xl);
   /* transform: perspective(1000px) rotateY(-5deg) rotateX(5deg); */
   transition: transform var(--transition-normal);
+  transform: scale(1.2);
+  margin-left: 60px;
 }
 
 /* .hero-image:hover {
@@ -2953,6 +2955,7 @@ p {
 .contact-form input,
 .contact-form select,
 .contact-form textarea {
+  color: var(--color-gray-800);
   padding: var(--spacing-4);
   border: 1px solid var(--color-gray-300);
   border-radius: var(--border-radius-lg);

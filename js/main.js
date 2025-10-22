@@ -194,57 +194,22 @@ function initializeContactForm() {
   }
 
   function validateForm(form) {
+    // Basic validation to check for empty required fields
     let isValid = true;
-    const inputs = form.querySelectorAll("input, textarea, select");
+    const inputs = form.querySelectorAll("[required]");
 
-    inputs.forEach((input) => {
-      if (!validateInput(input)) {
+    inputs.forEach(input => {
+      if (!input.value.trim()) {
         isValid = false;
+        showError(input, "This field is required.");
+      } else {
+        // Clear any existing error messages
+        const existingError = input.parentElement.querySelector(".error-message");
+        if (existingError) {
+          existingError.remove();
+        }
       }
     });
-
-    return isValid;
-  }
-
-  function validateInput(input) {
-    const errorClass = "error";
-    let isValid = true;
-
-    // Remove existing error message
-    const existingError = input.parentElement.querySelector(".error-message");
-    if (existingError) {
-      existingError.remove();
-    }
-
-    // Check required fields
-    if (input.hasAttribute("required") && !input.value.trim()) {
-      showError(input, "This field is required");
-      isValid = false;
-    }
-
-    // Email validation
-    if (input.type === "email" && input.value.trim()) {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(input.value)) {
-        showError(input, "Please enter a valid email address");
-        isValid = false;
-      }
-    }
-
-    // Phone validation
-    if (input.type === "tel" && input.value.trim()) {
-      const phoneRegex = /^\+?[\d\s-()]{10,}$/;
-      if (!phoneRegex.test(input.value)) {
-        showError(input, "Please enter a valid phone number");
-        isValid = false;
-      }
-    }
-
-    if (isValid) {
-      input.classList.remove(errorClass);
-    } else {
-      input.classList.add(errorClass);
-    }
 
     return isValid;
   }
@@ -253,7 +218,11 @@ function initializeContactForm() {
     const errorDiv = document.createElement("div");
     errorDiv.className = "error-message";
     errorDiv.textContent = message;
-    input.parentElement.appendChild(errorDiv);
+    // Prevent duplicate error messages
+    const existingError = input.parentElement.querySelector(".error-message");
+    if (!existingError) {
+      input.parentElement.appendChild(errorDiv);
+    }
   }
 }
 

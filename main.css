@@ -3438,8 +3438,9 @@ input:checked + .slider:before {
 }
 
 .price {
-  font-size: var(--font-size-5xl);
-  font-weight: 700;
+  /* font-size: var(--font-size-5xl); */
+  font-size: var(--font-size-xl);
+  font-weight: 500;
   color: var(--color-gray-900);
   transition: all var(--transition-normal);
 }
@@ -4296,4 +4297,12 @@ input:checked + .slider:before {
   .page-header {
     margin-top: 0;
   }
+}
+
+
+.enterprise-price{
+  font-size: 40px;
+  font-weight: bold;
+  color: var(--color-gray-900);
+  transition: all var(--transition-normal);
 }

@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeNavigation();
   initializeFAQAccordion();
   initializeContactForm();
+  initializeDemoForm();
   initializePricingToggle();
   initializeScrollAnimations();
   initializeNewsletterForm();
@@ -192,37 +193,38 @@ function initializeContactForm() {
       }
     });
   }
+}
 
-  function validateForm(form) {
-    // Basic validation to check for empty required fields
-    let isValid = true;
-    const inputs = form.querySelectorAll("[required]");
+// Shared form validation functions
+function validateForm(form) {
+  // Basic validation to check for empty required fields
+  let isValid = true;
+  const inputs = form.querySelectorAll("[required]");
 
-    inputs.forEach(input => {
-      if (!input.value.trim()) {
-        isValid = false;
-        showError(input, "This field is required.");
-      } else {
-        // Clear any existing error messages
-        const existingError = input.parentElement.querySelector(".error-message");
-        if (existingError) {
-          existingError.remove();
-        }
+  inputs.forEach(input => {
+    if (!input.value.trim()) {
+      isValid = false;
+      showError(input, "This field is required.");
+    } else {
+      // Clear any existing error messages
+      const existingError = input.parentElement.querySelector(".error-message");
+      if (existingError) {
+        existingError.remove();
       }
-    });
-
-    return isValid;
-  }
-
-  function showError(input, message) {
-    const errorDiv = document.createElement("div");
-    errorDiv.className = "error-message";
-    errorDiv.textContent = message;
-    // Prevent duplicate error messages
-    const existingError = input.parentElement.querySelector(".error-message");
-    if (!existingError) {
-      input.parentElement.appendChild(errorDiv);
     }
+  });
+
+  return isValid;
+}
+
+function showError(input, message) {
+  const errorDiv = document.createElement("div");
+  errorDiv.className = "error-message";
+  errorDiv.textContent = message;
+  // Prevent duplicate error messages
+  const existingError = input.parentElement.querySelector(".error-message");
+  if (!existingError) {
+    input.parentElement.appendChild(errorDiv);
   }
 }
 
@@ -376,6 +378,33 @@ function initializeNewsletterForm() {
       `;
     }
   });
+}
+
+// Demo Form functionality
+function initializeDemoForm() {
+  const demoForm = document.getElementById("demo-form");
+  if (demoForm) {
+    demoForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      if (validateForm(demoForm)) {
+        const submitButton = demoForm.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.innerHTML = '<span class="loading-spinner"></span> Submitting...';
+
+        // Simulate form submission
+        setTimeout(() => {
+          // You can add a success message here if you want
+          alert("Thank you for your demo request! We will be in touch shortly.");
+          demoForm.reset();
+
+          // Reset button state
+          submitButton.disabled = false;
+          submitButton.innerHTML = "Request Demo";
+        }, 1500);
+      }
+    });
+  }
 }
 
 // Utility functions
